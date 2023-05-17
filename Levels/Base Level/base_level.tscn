@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/Base Level/base_level.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Base Level/base_level.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Gameplay/Game End.tscn" type="PackedScene" id=4]
+
+[node name="Level" type="TileMap"]
+position = Vector2( 4, -14 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 131058, 0, 7, 131059, 0, 196612, 131060, 0, 196612, 131061, 0, 196612, 131062, 0, 196612, 131063, 0, 196612, 131064, 0, 196612, 131065, 0, 196612, 131066, 0, 196612, 131067, 0, 196612, 131068, 0, 196612, 131069, 0, 8, 196594, 0, 65543, 196595, 0, 196613, 196596, 0, 196613, 196597, 0, 196613, 196598, 0, 196613, 196599, 0, 196613, 196600, 0, 196613, 196601, 0, 196613, 196602, 0, 196613, 196603, 0, 196613, 196604, 0, 196613, 196605, 0, 65544 )
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -432, 25 )
+scale = Vector2( 1, 0.998949 )
+z_index = 1
+jump_power_scale_factor = 1.5
+
+[node name="Level End" parent="." instance=ExtResource( 4 )]
+position = Vector2( -97, -96 )
+z_index = 1

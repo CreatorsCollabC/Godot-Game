@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/Base Level/base_level.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Scenes/movable_object/MovableObject.gd" type="Script" id=2]
+
+[node name="Movable Object" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 32768
+script = ExtResource( 2 )
+max_distance = 100.0
+force_toward_default = 1.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 0, 0, 7, 1, 0, 196612, 2, 0, 196612, 3, 0, 8, 65536, 0, 131076, 65537, 0, 131078, 65538, 0, 131078, 65539, 0, 131077, 131072, 0, 65543, 131073, 0, 196613, 131074, 0, 131073, 131075, 0, 131077, 196610, 0, 65543, 196611, 0, 65544 )

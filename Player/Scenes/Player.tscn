@@ -1,0 +1,116 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Player/Scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://HUD/Scenes/Transition2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Scenes/Player.gdshader" type="Shader" id=3]
+[ext_resource path="res://Player/Assets/Textures/stand.png" type="Texture" id=4]
+[ext_resource path="res://Player/Assets/Textures/run1.png" type="Texture" id=5]
+[ext_resource path="res://Player/Assets/Textures/run3.png" type="Texture" id=6]
+[ext_resource path="res://Player/Assets/Textures/run5.png" type="Texture" id=7]
+[ext_resource path="res://Player/Assets/Textures/run7.png" type="Texture" id=8]
+[ext_resource path="res://Player/Assets/Textures/run4.png" type="Texture" id=9]
+[ext_resource path="res://Player/Assets/Textures/run2.png" type="Texture" id=10]
+[ext_resource path="res://Player/Assets/Textures/run6.png" type="Texture" id=11]
+[ext_resource path="res://Player/Assets/Textures/run0.png" type="Texture" id=12]
+[ext_resource path="res://Player/Assets/Textures/jumpDown.png" type="Texture" id=13]
+[ext_resource path="res://Player/Assets/Textures/jumpHigh.png" type="Texture" id=14]
+[ext_resource path="res://Player/Assets/Textures/jumpUp.png" type="Texture" id=15]
+[ext_resource path="res://Player/Scenes/animationSprite.gd" type="Script" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 22 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 3 )
+shader_param/NoiseBlockSize = 5.0
+shader_param/NoiseMaxLineWidth = 20.0
+shader_param/NoiseMinLineWidth = 5.0
+shader_param/NoiseFreq = 10.0
+shader_param/green_chilli_aura = false
+shader_param/red_chilli_aura = false
+shader_param/ghost_chilli_effect = false
+shader_param/offset = Vector2( -0.6, -1 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "falling",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "floating",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "jump up",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+} ]
+
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
+collision_layer = 32769
+script = ExtResource( 1 )
+jump_power = 550
+max_speed_scale_factor = 1.6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -22 )
+shape = SubResource( 1 )
+
+[node name="AnimationSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 1.19209e-07, -26 )
+scale = Vector2( 0.21, 0.21 )
+frames = SubResource( 5 )
+animation = "run"
+frame = 6
+playing = true
+script = ExtResource( 16 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="MarginContainer" parent="GUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -236.0
+margin_top = 486.0
+margin_right = 213.0
+margin_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/Control"]
+margin_right = 449.0
+margin_bottom = 143.0
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Control/MarginContainer"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 419.0
+margin_bottom = 113.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_v_enabled = true
+
+[node name="Transition" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( -618, 459 )
+scale = Vector2( 2, 2 )

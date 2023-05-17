@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/Gameplay/Game End.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Assets/Finish Flag Pattern.png" type="Texture" id=2]
+
+[node name="Game End" type="Area2D"]
+position = Vector2( 8423, 256 )
+collision_layer = 0
+collision_mask = 32768
+script = ExtResource( 1 )
+next_scene = "res://Levels/Level 1/Level 1.tscn"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 256 )
+region_filter_clip = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 32, 128, -32, 128, -32, -128, 32, -128 )
+
+[connection signal="body_entered" from="." to="." method="_on_Game_End_body_entered"]
