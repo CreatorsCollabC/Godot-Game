@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Base Level/base_level.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Base Level/base_level.gd" type="Script" id=3]
 [ext_resource path="res://Levels/Gameplay/Game End.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Assets/layers/Stars-Big_1_2_PC.png" type="Texture" id=5]
+[ext_resource path="res://Levels/Assets/layers/Nebula Aqua-Pink.png" type="Texture" id=6]
+[ext_resource path="res://Levels/Assets/layers/Stars-Big_1_1_PC.png" type="Texture" id=7]
+[ext_resource path="res://Levels/Assets/layers/Stars Small_1.png" type="Texture" id=8]
+[ext_resource path="res://Levels/Assets/layers/Stars Small_2.png" type="Texture" id=9]
 
 [node name="Level" type="TileMap"]
-position = Vector2( 4, -14 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
@@ -23,3 +27,61 @@ jump_power_scale_factor = 1.5
 [node name="Level End" parent="." instance=ExtResource( 4 )]
 position = Vector2( -97, -96 )
 z_index = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -700 )
+
+[node name="nebula" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/nebula"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Background_stars_1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background_stars_1"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Background_stars_2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.15, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background_stars_2"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="nebula2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/nebula2"]
+modulate = Color( 1, 1, 1, 0.619608 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="foreground_stars_1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/foreground_stars_1"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="foreground_stars_2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/foreground_stars_2"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+centered = false
