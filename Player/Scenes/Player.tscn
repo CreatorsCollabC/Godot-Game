@@ -75,7 +75,6 @@ position = Vector2( 1.19209e-07, -26 )
 scale = Vector2( 0.21, 0.21 )
 frames = SubResource( 5 )
 animation = "run"
-frame = 6
 playing = true
 script = ExtResource( 16 )
 
@@ -105,6 +104,32 @@ margin_left = 30.0
 margin_top = 30.0
 margin_right = 419.0
 margin_bottom = 113.0
+
+[node name="Control2" type="MarginContainer" parent="GUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -511.0
+margin_top = 519.0
+margin_right = 137.0
+margin_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.539504, 0.457676 )
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/Control2"]
+margin_right = 648.0
+margin_bottom = 175.0
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Control2/MarginContainer"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 618.0
+margin_bottom = 145.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

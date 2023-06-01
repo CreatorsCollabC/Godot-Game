@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Player/Assets/Powers/red_chilli.png" type="Texture" id=1]
+[ext_resource path="res://Player/Assets/Powers/green_chilli.png" type="Texture" id=1]
 [ext_resource path="res://Player/Scenes/Pickups/Pickups.gd" type="Script" id=2]
 [ext_resource path="res://Player/Assets/Powers/platform.png" type="Texture" id=4]
 

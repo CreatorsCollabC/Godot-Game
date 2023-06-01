@@ -27,7 +27,9 @@ var was_on_floor: bool;
 var spice_powerup_scene = preload("res://Player/Scenes/Spice powerup/Spice powerup.tscn")
 var spice_scenes : Dictionary
 
-
+#Health
+var health_scene = preload("res://Player/Scenes/Stats/Health.tscn")
+var healthcount = 3
 
 func _ready() -> void:
 	for spice in  SpicePowerup.SpicePowerup.values() :
@@ -39,6 +41,10 @@ func _ready() -> void:
 		spice_scenes[spice] = instanced_scene
 		$AnimationSprite.set_powerup_animation(spice, false)
 		$GUI/Control/MarginContainer/HBoxContainer.add_child(instanced_scene)
+	
+	#Health
+	var health_bar1 = health_scene.instance()
+	$GUI/Control2/MarginContainer/HBoxContainer.add_child(health_bar1)
 	
 	#Transition.new_pos(position)
 	$Transition.reverse()
@@ -195,3 +201,12 @@ func end_spice(spice : int) : #called when a spice effects ends
 func pickup_spice(spice : int) : #called when you pickup a spice
 	spice_scenes[spice].pickup()
 	
+func lose_life() : #called when you take damage
+	healthcount -= 1
+	if healthcount == 2:
+		$GUI/Control2/MarginContainer/HBoxContainer/Control/Health3.hide()
+	elif healthcount == 1:
+		$GUI/Control2/MarginContainer/HBoxContainer/Control/Health2.hide()
+	elif healthcount == 0:
+		$GUI/Control2/MarginContainer/HBoxContainer/Control/Health1.hide()
+		
