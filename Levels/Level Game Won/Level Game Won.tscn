@@ -16,6 +16,7 @@ position = Vector2( -472, 31 )
 
 [node name="Level End" parent="." index="1"]
 position = Vector2( 199, -282 )
+scale = Vector2( 0.998427, 1 )
 end_game = true
 
 [node name="Pickups4" parent="." index="2" instance=ExtResource( 4 )]

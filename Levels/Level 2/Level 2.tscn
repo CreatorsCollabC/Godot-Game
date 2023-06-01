@@ -13,7 +13,8 @@ position = Vector2( 4208, 192 )
 
 [node name="Level End" parent="." index="1"]
 position = Vector2( 4894, 146 )
-next_scene = "res://Levels/Level Game Won/Level Game Won.tscn"
+scale = Vector2( 0.997415, 1.01485 )
+next_scene = "res://Levels/Level 3/Level 3.tscn"
 
 [node name="Pickups8" parent="." index="2" instance=ExtResource( 4 )]
 position = Vector2( 4883, 999 )

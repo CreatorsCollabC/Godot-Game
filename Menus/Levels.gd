@@ -23,13 +23,13 @@ func _on_Level_2_pressed():
 	get_tree().change_scene("res://Levels/Level 2/Level 2.tscn")
 
 func _on_Level_3_pressed():
-	get_tree().change_scene("res://Levels/Level Containment/Level Containment.tscn")
+	get_tree().change_scene("res://Levels/Level 3/Level 3.tscn")
 
 func _on_Level_4_pressed():
-	get_tree().change_scene("res://Levels/Level-Ants-Test/Ants-Test.tscn")
+	get_tree().change_scene("res://Levels/Level 4/Level 4.tscn")
 
 func _on_Level_5_pressed():
-	get_tree().change_scene("res://Levels/test level/test_room.tscn")
+	get_tree().change_scene("res://Levels/Level 4/Level 5.tscn")
 	
 func _on_Level_6_pressed():
 	get_tree().change_scene("res://Levels/Level Game Won/Level Game Won.tscn")
