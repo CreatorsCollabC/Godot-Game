@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://HUD/Scenes/Transition.tres" type="Material" id=1]
-[ext_resource path="res://HUD/Assets/pepper_transition.png" type="Texture" id=2]
+[ext_resource path="res://HUD/Assets/pepper_transition.png" type="Texture2D" id=2]
 [ext_resource path="res://HUD/Scenes/Transition.gd" type="Script" id=3]
 
-[node name="Pepper_transition" type="Sprite"]
+[node name="Pepper_transition" type="Sprite2D"]
 material = ExtResource( 1 )
 position = Vector2( -306.574, 234.166 )
 texture = ExtResource( 2 )

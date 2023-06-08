@@ -1,11 +1,11 @@
-extends KinematicBody2D
+extends CharacterBody2D
 class_name MovableObject
 
 var default_position
-export var direction : Vector2
-export var max_distance : float
-export var force_toward_default : float
-var velocity : Vector2
+@export var direction : Vector2
+@export var max_distance : float
+@export var force_toward_default : float
+
 
 func _ready() -> void:
 	default_position = position

@@ -4,7 +4,7 @@ class_name SpicePowerup
 signal use_spice
 signal end_spice
 
-enum SpicePowerup {
+enum SpicePowerupEnum {
 	GREEN_CHILLI = 0,
 	RED_CHILLI = 1,
 	BLACK_PEPPER = 2,
@@ -12,17 +12,17 @@ enum SpicePowerup {
 }
 
 var durations = {
-	SpicePowerup.RED_CHILLI : 5,
-	SpicePowerup.GREEN_CHILLI : 5,
-	SpicePowerup.BLACK_PEPPER : 5,
-	SpicePowerup.GHOST_CHILLI : 2,
+	SpicePowerupEnum.RED_CHILLI : 5,
+	SpicePowerupEnum.GREEN_CHILLI : 5,
+	SpicePowerupEnum.BLACK_PEPPER : 5,
+	SpicePowerupEnum.GHOST_CHILLI : 2,
 }
 
 var colors = {
-	SpicePowerup.RED_CHILLI : Color.red,
-	SpicePowerup.GREEN_CHILLI : Color.green,
-	SpicePowerup.BLACK_PEPPER : Color.brown,
-	SpicePowerup.GHOST_CHILLI : Color.cornflower,
+	SpicePowerupEnum.RED_CHILLI : Color.RED,
+	SpicePowerupEnum.GREEN_CHILLI : Color.GREEN,
+	SpicePowerupEnum.BLACK_PEPPER : Color.BROWN,
+	SpicePowerupEnum.GHOST_CHILLI : Color.CORNSILK,
 }
 
 const image_path = "res://Player/Assets/Powers/"
@@ -32,20 +32,23 @@ var spice_name : String
 var duration : float 
 var time_until_powerup_end : float
 
-export(SpicePowerup) var spice : int setget set_spice, get_spice
-func set_spice(value : int):
+@export var spice: SpicePowerupEnum : 
+	get = get_spice,
+	set = set_spice
+
+func set_spice(value : SpicePowerupEnum):
 	spice = value
 	duration = durations[spice]
-	spice_name = SpicePowerup.keys()[spice].to_lower()
+	spice_name = SpicePowerupEnum.keys()[spice].to_lower()
 	if !is_inside_tree() :
-		yield(self,"ready")
-	$Overlay/progress_bar/ColorRect.color = colors[spice]/4.0 + Color.black * 3/4.0
-	$Overlay.self_modulate = colors[spice] / 4.0 + Color.black * 3/4.0
+		await self.ready
+	$Overlay/progress_bar/ColorRect.color = colors[spice]/4.0 + Color.BLACK * 3/4.0
+	$Overlay.self_modulate = colors[spice] / 4.0 + Color.BLACK * 3/4.0
 
 func get_spice():
 	return spice
 
-var spice_available : bool setget set_spice_available, get_spice_available
+var spice_available : bool: get = get_spice_available, set = set_spice_available
 func set_spice_available(value):
 	if value :
 		$Overlay/progress_bar.value = 0
@@ -61,11 +64,11 @@ func get_spice_available():
 func _ready() -> void:
 	$Overlay/progress_bar.material = $Overlay/progress_bar.material.duplicate(true)
 	var tooltip = "to activate this power you can ether click on it or use one of these shortcut :"
-	for event in InputMap.get_action_list(spice_name):
+	for event in InputMap.action_get_events(spice_name):
 		tooltip += "\n\t - " + event.as_text()
-	$Overlay/TextureRect/Label.text = InputMap.get_action_list(spice_name)[0].as_text().trim_suffix("(Physical)")
-	$Overlay/progress_bar/Button.hint_tooltip = tooltip
-	$Overlay/progress_bar/Button.shortcut.shortcut.action = spice_name
+	$Overlay/TextureRect/Label.text = InputMap.action_get_events(spice_name)[0].as_text().trim_suffix("(Physical)")
+	$Overlay/progress_bar/Button.tooltip_text = tooltip
+	$Overlay/progress_bar/Button.shortcut.events[0].action = spice_name
 	$Overlay/progress_bar/spice_image.texture = load(image_path + spice_name + ".png")
 
 

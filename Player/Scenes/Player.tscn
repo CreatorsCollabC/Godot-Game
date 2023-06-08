@@ -3,22 +3,22 @@
 [ext_resource path="res://Player/Scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://HUD/Scenes/Transition2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Scenes/Player.gdshader" type="Shader" id=3]
-[ext_resource path="res://Player/Assets/Textures/stand.png" type="Texture" id=4]
-[ext_resource path="res://Player/Assets/Textures/run1.png" type="Texture" id=5]
-[ext_resource path="res://Player/Assets/Textures/run3.png" type="Texture" id=6]
-[ext_resource path="res://Player/Assets/Textures/run5.png" type="Texture" id=7]
-[ext_resource path="res://Player/Assets/Textures/run7.png" type="Texture" id=8]
-[ext_resource path="res://Player/Assets/Textures/run4.png" type="Texture" id=9]
-[ext_resource path="res://Player/Assets/Textures/run2.png" type="Texture" id=10]
-[ext_resource path="res://Player/Assets/Textures/run6.png" type="Texture" id=11]
-[ext_resource path="res://Player/Assets/Textures/run0.png" type="Texture" id=12]
-[ext_resource path="res://Player/Assets/Textures/jumpDown.png" type="Texture" id=13]
-[ext_resource path="res://Player/Assets/Textures/jumpHigh.png" type="Texture" id=14]
-[ext_resource path="res://Player/Assets/Textures/jumpUp.png" type="Texture" id=15]
+[ext_resource path="res://Player/Assets/Textures/stand.png" type="Texture2D" id=4]
+[ext_resource path="res://Player/Assets/Textures/run1.png" type="Texture2D" id=5]
+[ext_resource path="res://Player/Assets/Textures/run3.png" type="Texture2D" id=6]
+[ext_resource path="res://Player/Assets/Textures/run5.png" type="Texture2D" id=7]
+[ext_resource path="res://Player/Assets/Textures/run7.png" type="Texture2D" id=8]
+[ext_resource path="res://Player/Assets/Textures/run4.png" type="Texture2D" id=9]
+[ext_resource path="res://Player/Assets/Textures/run2.png" type="Texture2D" id=10]
+[ext_resource path="res://Player/Assets/Textures/run6.png" type="Texture2D" id=11]
+[ext_resource path="res://Player/Assets/Textures/run0.png" type="Texture2D" id=12]
+[ext_resource path="res://Player/Assets/Textures/jumpDown.png" type="Texture2D" id=13]
+[ext_resource path="res://Player/Assets/Textures/jumpHigh.png" type="Texture2D" id=14]
+[ext_resource path="res://Player/Assets/Textures/jumpUp.png" type="Texture2D" id=15]
 [ext_resource path="res://Player/Scenes/animationSprite.gd" type="Script" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15, 22 )
+size = Vector2( 15, 22 )
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 3 )
@@ -59,7 +59,7 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[node name="Player" type="KinematicBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 32769
 script = ExtResource( 1 )
 jump_power = 550
@@ -69,7 +69,7 @@ max_speed_scale_factor = 1.6
 position = Vector2( 0, -22 )
 shape = SubResource( 1 )
 
-[node name="AnimationSprite" type="AnimatedSprite" parent="."]
+[node name="AnimationSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource( 4 )
 position = Vector2( 1.19209e-07, -26 )
 scale = Vector2( 0.21, 0.21 )
@@ -84,56 +84,56 @@ script = ExtResource( 16 )
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -236.0
-margin_top = 486.0
-margin_right = 213.0
-margin_bottom = 29.0
+offset_left = -236.0
+offset_top = 486.0
+offset_right = 213.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI/Control"]
-margin_right = 449.0
-margin_bottom = 143.0
-custom_constants/margin_right = 30
-custom_constants/margin_top = 30
-custom_constants/margin_left = 30
-custom_constants/margin_bottom = 30
+offset_right = 449.0
+offset_bottom = 143.0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_bottom = 30
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GUI/Control/MarginContainer"]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 419.0
-margin_bottom = 113.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 419.0
+offset_bottom = 113.0
 
 [node name="Control2" type="MarginContainer" parent="GUI"]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -511.0
-margin_top = 519.0
-margin_right = 137.0
-margin_bottom = 94.0
+offset_left = -511.0
+offset_top = 519.0
+offset_right = 137.0
+offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_scale = Vector2( 0.539504, 0.457676 )
+scale = Vector2( 0.539504, 0.457676 )
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI/Control2"]
-margin_right = 648.0
-margin_bottom = 175.0
-custom_constants/margin_right = 30
-custom_constants/margin_top = 30
-custom_constants/margin_left = 30
-custom_constants/margin_bottom = 30
+offset_right = 648.0
+offset_bottom = 175.0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_bottom = 30
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GUI/Control2/MarginContainer"]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 618.0
-margin_bottom = 145.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 618.0
+offset_bottom = 145.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-drag_margin_v_enabled = true
+drag_vertical_enabled = true
 
 [node name="Transition" parent="." instance=ExtResource( 2 )]
 visible = false

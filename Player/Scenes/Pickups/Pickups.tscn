@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Player/Assets/Powers/green_chilli.png" type="Texture" id=1]
+[ext_resource path="res://Player/Assets/Powers/green_chilli.png" type="Texture2D" id=1]
 [ext_resource path="res://Player/Scenes/Pickups/Pickups.gd" type="Script" id=2]
-[ext_resource path="res://Player/Assets/Powers/platform.png" type="Texture" id=4]
+[ext_resource path="res://Player/Assets/Powers/platform.png" type="Texture2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+size = Vector2( 16, 16 )
 
 [node name="Pickups" type="Area2D"]
 collision_layer = 0
 collision_mask = 32768
 script = ExtResource( 2 )
 
-[node name="Platform" type="Sprite" parent="."]
+[node name="Platform" type="Sprite2D" parent="."]
 position = Vector2( 0, 12 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
@@ -20,7 +20,7 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Pickups_sprite" type="Sprite" parent="."]
+[node name="Pickups_sprite" type="Sprite2D" parent="."]
 position = Vector2( 9.53674e-07, -2.38419e-07 )
 scale = Vector2( 0.07, 0.07 )
 texture = ExtResource( 1 )

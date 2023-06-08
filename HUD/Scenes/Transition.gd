@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 var t = 1
 var dir = 0
@@ -22,7 +22,7 @@ func reverse():
 func _process(delta):
 	t += delta * dir
 	if dir != 0:
-		get_material().set_shader_param("t",t)
+		get_material().set_shader_parameter("t",t)
 	
 	if t <= 0 and dir < 0:
 		dir = 1

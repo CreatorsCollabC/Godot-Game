@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://b1tdsbl3booem"]
 
-[ext_resource path="res://Player/Assets/Powers/red_chilli.png" type="Texture" id=1]
-[ext_resource path="res://Player/Assets/Powers/Border.png" type="Texture" id=2]
-[ext_resource path="res://Player/Scenes/Spice powerup/Spice powerup.gd" type="Script" id=3]
-[ext_resource path="res://Player/Assets/Powers/progress.png" type="Texture" id=4]
-[ext_resource path="res://Player/Assets/Powers/keyboard_key_empty-3113514317.png" type="Texture" id=5]
+[ext_resource type="Texture2D" uid="uid://dhwydlspj3gmh" path="res://Player/Assets/Powers/red_chilli.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dpkycj1x4amsc" path="res://Player/Assets/Powers/Border.png" id="2"]
+[ext_resource type="Script" path="res://Player/Scenes/Spice powerup/Spice powerup.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://ue8wb3okgyci" path="res://Player/Assets/Powers/progress.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cmt004lgt4bu" path="res://Player/Assets/Powers/keyboard_key_empty-3113514317.png" id="5"]
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id="5"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -15,103 +15,104 @@ void fragment() {
 	COLOR.rgb = vec3(COLOR.x + COLOR.y + COLOR.z) / 3.0;
 }"
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id="4"]
 resource_local_to_scene = true
-shader = SubResource( 5 )
+shader = SubResource("5")
 
-[sub_resource type="InputEventAction" id=2]
-resource_local_to_scene = true
+[sub_resource type="InputEventAction" id="InputEventAction_s8h8k"]
 
-[sub_resource type="ShortCut" id=1]
+[sub_resource type="Shortcut" id="1"]
 resource_local_to_scene = true
-shortcut = SubResource( 2 )
+events = [SubResource("InputEventAction_s8h8k")]
 
 [node name="Spice_powerup" type="AspectRatioContainer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 47.0
-margin_top = 119.0
-margin_right = -538.0
-margin_bottom = -293.0
+offset_left = 47.0
+offset_top = 119.0
+offset_right = -538.0
+offset_bottom = -293.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 size_flags_horizontal = 3
-script = ExtResource( 3 )
+script = ExtResource("3")
 spice = 3
 
 [node name="Overlay" type="TextureRect" parent="."]
-margin_left = 125.5
-margin_right = 313.5
-margin_bottom = 188.0
-texture = ExtResource( 2 )
-expand = true
+layout_mode = 2
+texture = ExtResource("2")
+expand_mode = 1
 
-[node name="progress_bar" type="TextureProgress" parent="Overlay"]
+[node name="progress_bar" type="TextureProgressBar" parent="Overlay"]
 show_behind_parent = true
-material = SubResource( 4 )
+material = SubResource("4")
+layout_mode = 0
 anchor_left = 0.159
 anchor_top = 0.177
 anchor_right = 0.841
 anchor_bottom = 0.814
-margin_left = 0.032999
-margin_top = -0.000999451
-margin_right = -0.0330048
-margin_bottom = 0.0179977
+offset_left = 0.032999
+offset_top = -0.000999451
+offset_right = -0.0330048
+offset_bottom = 0.0179977
 grow_horizontal = 2
 grow_vertical = 2
 step = 0.1
 value = 70.0
-texture_progress = ExtResource( 4 )
 fill_mode = 5
-tint_progress = Color( 0, 0, 0, 0.658824 )
 nine_patch_stretch = true
+texture_progress = ExtResource("4")
+tint_progress = Color(0, 0, 0, 0.658824)
 
 [node name="ColorRect" type="ColorRect" parent="Overlay/progress_bar"]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 0, 0, 1 )
+color = Color(1, 0, 0, 1)
 
 [node name="spice_image" type="TextureRect" parent="Overlay/progress_bar"]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Overlay/progress_bar"]
 show_behind_parent = true
-position = Vector2( -29.925, -33.275 )
+position = Vector2(-29.925, -33.275)
 copy_mode = 2
 
 [node name="Button" type="Button" parent="Overlay/progress_bar"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-shortcut_in_tooltip = false
-shortcut = SubResource( 1 )
+shortcut = SubResource("1")
 flat = true
 
 [node name="TextureRect" type="TextureRect" parent="Overlay"]
+layout_mode = 0
 anchor_left = 0.707
 anchor_top = 0.707
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.0839996
-margin_top = 0.0839996
-texture = ExtResource( 5 )
-expand = true
+offset_left = 0.0839996
+offset_top = 0.0839996
+texture = ExtResource("5")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Overlay/TextureRect"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -7.0
-margin_right = 20.0
-margin_bottom = 7.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-align = 1
+offset_left = -20.0
+offset_top = -7.0
+offset_right = 20.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Overlay/progress_bar/Button" to="." method="_on_Button_pressed"]

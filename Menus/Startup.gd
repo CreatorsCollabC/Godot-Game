@@ -17,14 +17,14 @@ func _ready():
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://Levels/Level 1/Level 1.tscn")
+	get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
 
 func _on_Levels_pressed():
-	var levels = load("res://Menus/Levels.tscn").instance()
+	var levels = load("res://Menus/Levels.tscn").instantiate()
 	get_tree().current_scene.add_child(levels)
 	
 func _on_Options_pressed():
-	var options = load("res://Menus/Options.tscn").instance()
+	var options = load("res://Menus/Options.tscn").instantiate()
 	get_tree().current_scene.add_child(options)
 	
 func _on_Quit_pressed():

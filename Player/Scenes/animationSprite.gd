@@ -1,5 +1,5 @@
-tool
-extends AnimatedSprite
+@tool
+extends AnimatedSprite2D
 
 
 # Declare member variables here. Examples:
@@ -11,13 +11,13 @@ extends AnimatedSprite
 func set_powerup_animation(spice, value : bool) :
 	var shader_param = ""
 	match spice:
-		SpicePowerup.SpicePowerup.GREEN_CHILLI :
+		SpicePowerup.SpicePowerupEnum.GREEN_CHILLI :
 			shader_param = "green_chilli_aura"
-		SpicePowerup.SpicePowerup.RED_CHILLI :
+		SpicePowerup.SpicePowerupEnum.RED_CHILLI :
 			shader_param = "red_chilli_aura"
-		SpicePowerup.SpicePowerup.GHOST_CHILLI :
+		SpicePowerup.SpicePowerupEnum.GHOST_CHILLI :
 			shader_param = "ghost_chilli_effect"
-	material.set_shader_param(shader_param, value)
+	material.set_shader_parameter(shader_param, value)
 
 func _set(property, value):
 	if property == "animation" :
@@ -32,5 +32,5 @@ func _set(property, value):
 					offset.y = -1.5
 				"jump up" :
 					offset.y = 0.5
-			material.set_shader_param("offset", offset)
+			material.set_shader_parameter("offset", offset)
 		return true

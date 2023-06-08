@@ -4,7 +4,7 @@ extends Area2D
 # Declare member variables here. Examples:
 var triggered_node
 
-export(NodePath) var triggered
+@export var triggered: NodePath
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

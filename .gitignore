@@ -1,4 +1,2 @@
-__MACOSX
-*.DS_Store
-**/.import/
-*.import
+# Godot 4+ specific ignores
+.godot/

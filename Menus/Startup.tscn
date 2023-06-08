@@ -1,75 +1,84 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://63h14g6vd1ud"]
 
-[ext_resource path="res://Menus/Startup.gd" type="Script" id=1]
-[ext_resource path="res://Levels/Assets/layers/Nebula Aqua-Pink.png" type="Texture" id=2]
+[ext_resource type="Script" path="res://Menus/Startup.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://757i00fr3lwy" path="res://Levels/Assets/layers/Nebula Aqua-Pink.png" id="2"]
 
 [node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+metadata/_edit_vertical_guides_ = []
 
-[node name="NebulaAqua-Pink" type="Sprite" parent="."]
-position = Vector2( 513, 326 )
-scale = Vector2( 0.560059, 0.560059 )
-texture = ExtResource( 2 )
+[node name="NebulaAqua-Pink" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -765.0
+offset_top = -1265.0
+offset_right = 3461.0
+offset_bottom = 3097.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.560059, 0.560059)
+texture = ExtResource("2")
+stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -89.5
-margin_top = -34.0
-margin_right = 89.5
-margin_bottom = 34.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.422
+anchor_top = 0.448
+anchor_right = 0.578
+anchor_bottom = 0.657
+offset_left = 0.355976
+offset_top = -0.304009
+offset_right = -0.35601
+offset_bottom = -67.736
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-margin_right = 179.0
-margin_bottom = 20.0
-focus_neighbour_top = NodePath("../Quit")
-focus_neighbour_bottom = NodePath("../Levels")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Levels")
 text = "Start"
 
 [node name="Levels" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 179.0
-margin_bottom = 44.0
-focus_neighbour_top = NodePath("../Start")
-focus_neighbour_bottom = NodePath("../Options")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Options")
 text = "Choose Level"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
-margin_right = 179.0
-margin_bottom = 68.0
-focus_neighbour_top = NodePath("../Levels")
-focus_neighbour_bottom = NodePath("../Quit")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Levels")
+focus_neighbor_bottom = NodePath("../Quit")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
-margin_top = 72.0
-margin_right = 179.0
-margin_bottom = 92.0
-focus_neighbour_top = NodePath("../Options")
-focus_neighbour_bottom = NodePath("../Start")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Start")
 text = "Quit"
 
 [node name="Title" type="VBoxContainer" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -89.0
-margin_top = -83.0
-margin_right = 90.0
-margin_bottom = -46.0
+offset_left = -89.0
+offset_top = -83.0
+offset_right = 90.0
+offset_bottom = -46.0
 
 [node name="Title" type="Label" parent="Title"]
-margin_right = 179.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 1, 0, 0.796078, 1 )
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.796078, 1)
 text = "Game Title"
-align = 1
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_Levels_pressed"]

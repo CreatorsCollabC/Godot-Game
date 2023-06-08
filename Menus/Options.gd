@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Back_pressed():
-	get_tree().change_scene("res://Menus/Startup.tscn")
+	get_tree().change_scene_to_file("res://Menus/Startup.tscn")

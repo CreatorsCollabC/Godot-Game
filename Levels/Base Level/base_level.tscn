@@ -1,87 +1,85 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://bssfgwdv2gep1"]
 
-[ext_resource path="res://Levels/Base Level/base_level.tres" type="TileSet" id=1]
-[ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Base Level/base_level.gd" type="Script" id=3]
-[ext_resource path="res://Levels/Gameplay/Game End.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/Assets/layers/Stars-Big_1_2_PC.png" type="Texture" id=5]
-[ext_resource path="res://Levels/Assets/layers/Nebula Aqua-Pink.png" type="Texture" id=6]
-[ext_resource path="res://Levels/Assets/layers/Stars-Big_1_1_PC.png" type="Texture" id=7]
-[ext_resource path="res://Levels/Assets/layers/Stars Small_1.png" type="Texture" id=8]
-[ext_resource path="res://Levels/Assets/layers/Stars Small_2.png" type="Texture" id=9]
+[ext_resource type="TileSet" uid="uid://dnnswt1tk472h" path="res://Levels/Base Level/base_level.tres" id="1"]
+[ext_resource type="PackedScene" path="res://Player/Scenes/Player.tscn" id="2"]
+[ext_resource type="Script" path="res://Levels/Base Level/base_level.gd" id="3"]
+[ext_resource type="PackedScene" path="res://Levels/Gameplay/Game End.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://0xa3r7afof85" path="res://Levels/Assets/layers/Stars-Big_1_2_PC.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://757i00fr3lwy" path="res://Levels/Assets/layers/Nebula Aqua-Pink.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cx4kiyh5mttg0" path="res://Levels/Assets/layers/Stars-Big_1_1_PC.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dl66rad6odwrh" path="res://Levels/Assets/layers/Stars Small_1.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dhjyw47gm8igb" path="res://Levels/Assets/layers/Stars Small_2.png" id="9"]
 
 [node name="Level" type="TileMap"]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 32, 32 )
-cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
-format = 1
-tile_data = PoolIntArray( 131058, 0, 7, 131059, 0, 196612, 131060, 0, 196612, 131061, 0, 196612, 131062, 0, 196612, 131063, 0, 196612, 131064, 0, 196612, 131065, 0, 196612, 131066, 0, 196612, 131067, 0, 196612, 131068, 0, 196612, 131069, 0, 8, 196594, 0, 65543, 196595, 0, 196613, 196596, 0, 196613, 196597, 0, 196613, 196598, 0, 196613, 196599, 0, 196613, 196600, 0, 196613, 196601, 0, 196613, 196602, 0, 196613, 196603, 0, 196613, 196604, 0, 196613, 196605, 0, 65544 )
-script = ExtResource( 3 )
+tile_set = ExtResource("1")
+format = 2
+layer_0/tile_data = PackedInt32Array(65517, 393216, 2, 196607, 327680, 2, 131071, 327680, 2, 65535, 327680, 2, 196606, 393216, 2, 131070, 393216, 2, 65534, 393216, 2, 196605, 393216, 2, 131069, 393216, 2, 65533, 393216, 2, 196604, 393216, 2, 131068, 393216, 2, 65532, 393216, 2, 196603, 393216, 2, 131067, 393216, 2, 65531, 393216, 2, 196602, 393216, 2, 131066, 393216, 2, 65530, 393216, 2, 196601, 393216, 2, 131065, 393216, 2, 65529, 393216, 2, 196600, 393216, 2, 131064, 393216, 2, 65528, 393216, 2, 196599, 393216, 2, 131063, 393216, 2, 65527, 393216, 2, 196598, 393216, 2, 131062, 393216, 2, 65526, 393216, 2, 196597, 393216, 2, 131061, 393216, 2, 65525, 393216, 2, 196596, 393216, 2, 131060, 393216, 2, 65524, 393216, 2, 196595, 393216, 2, 131059, 393216, 2, 65523, 393216, 2, 196594, 393216, 2, 131058, 393216, 2, 65522, 393216, 2, 196593, 393216, 2, 131057, 393216, 2, 65521, 393216, 2, 196592, 393216, 2, 131056, 393216, 2, 65520, 393216, 2, 196591, 393216, 2, 131055, 393216, 2, 65519, 393216, 2, 196590, 393216, 2, 131054, 393216, 2, 65518, 393216, 2, 196589, 393216, 2, 131053, 393216, 2, 327679, 327680, 2, 262143, 327680, 2, 327678, 393216, 2, 262142, 393216, 2, 327677, 393216, 2, 262141, 393216, 2, 327676, 393216, 2, 262140, 393216, 2, 327675, 393216, 2, 262139, 393216, 2, 327674, 393216, 2, 262138, 393216, 2, 327673, 393216, 2, 262137, 393216, 2, 327672, 393216, 2, 262136, 393216, 2, 327671, 393216, 2, 262135, 393216, 2, 327670, 393216, 2, 262134, 393216, 2, 327669, 393216, 2, 262133, 393216, 2, 327668, 393216, 2, 262132, 393216, 2, 327667, 393216, 2, 262131, 393216, 2, 327666, 393216, 2, 262130, 393216, 2, 327665, 393216, 2, 262129, 393216, 2, 327664, 393216, 2, 262128, 393216, 2, 327663, 393216, 2, 262127, 393216, 2, 327662, 393216, 2, 262126, 393216, 2, 327661, 393216, 2, 262125, 393216, 2, -2, 262144, 3, -1, 524288, 0, -3, 262144, 3, 196588, 393216, 2, 131052, 393216, 2, 262124, 393216, 2, 196587, 262144, 2, 262123, 262144, 2, 327660, 393216, 2, 327659, 262144, 2, 393195, 458752, 1, 393196, 327680, 3, 65516, 393216, 2, 65515, 262144, 2, 131051, 262144, 2, 393197, 327680, 3, 393203, 327680, 3, 393202, 327680, 3, 393201, 327680, 3, 393200, 327680, 3, 393199, 327680, 3, 393198, 327680, 3, 393215, 524288, 1, 393214, 327680, 3, 393213, 327680, 3, 393212, 327680, 3, 393211, 327680, 3, 393210, 327680, 3, 393209, 327680, 3, 393208, 327680, 3, 393207, 327680, 3, 393206, 327680, 3, 393205, 327680, 3, 393204, 327680, 3, -4, 262144, 3, -5, 262144, 3, -6, 262144, 3, -7, 262144, 3, -8, 262144, 3, -9, 262144, 3, -10, 262144, 3, -11, 262144, 3, -12, 262144, 3, -13, 262144, 3, -14, 262144, 3, -15, 262144, 3, -16, 262144, 3, -17, 262144, 3, -18, 262144, 3, -19, 262144, 3, -20, 262144, 3, -21, 458752, 0)
+script = ExtResource("3")
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -432, 25 )
-scale = Vector2( 1, 0.998949 )
+[node name="Player" parent="." instance=ExtResource("2")]
 z_index = 1
+position = Vector2(-289, -43)
+scale = Vector2(1, 0.998949)
 jump_power_scale_factor = 1.5
 
-[node name="Level End" parent="." instance=ExtResource( 4 )]
-position = Vector2( -97, -96 )
+[node name="Level End" parent="." instance=ExtResource("4")]
 z_index = 1
+position = Vector2(-97, -96)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_base_offset = Vector2( 0, -700 )
+scroll_base_offset = Vector2(0, -700)
 
 [node name="nebula" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 2048, 2048 )
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(2048, 2048)
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/nebula"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 6 )
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/nebula"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6")
 centered = false
 
 [node name="Background_stars_1" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.1, 1 )
-motion_mirroring = Vector2( 2048, 2048 )
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(2048, 2048)
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background_stars_1"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 8 )
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background_stars_1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8")
 centered = false
 
 [node name="Background_stars_2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.15, 1 )
-motion_mirroring = Vector2( 2048, 2048 )
+motion_scale = Vector2(0.15, 1)
+motion_mirroring = Vector2(2048, 2048)
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background_stars_2"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 9 )
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background_stars_2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9")
 centered = false
 
 [node name="nebula2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 2048, 2048 )
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(2048, 2048)
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/nebula2"]
-modulate = Color( 1, 1, 1, 0.619608 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 6 )
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/nebula2"]
+modulate = Color(1, 1, 1, 0.619608)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6")
 centered = false
 
 [node name="foreground_stars_1" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 2048, 2048 )
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(2048, 2048)
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/foreground_stars_1"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 7 )
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/foreground_stars_1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7")
 centered = false
 
 [node name="foreground_stars_2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.6, 1 )
-motion_mirroring = Vector2( 2048, 2048 )
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(2048, 2048)
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/foreground_stars_2"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/foreground_stars_2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5")
 centered = false
